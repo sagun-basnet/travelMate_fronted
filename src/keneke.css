@@ -1,0 +1,102 @@
+section#feedback{
+    /* margin-top: 5rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #feedback span{
+    color: var(--color-secondary);
+  }
+  #feedback .feedback_header{
+    height: calc(100vh - 5rem);
+    display: flex;
+    width: 92vw;
+  }
+  .feedback_header .left{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .feedback_header .left .content_div{
+    /* border: 2px solid red;  */
+    width: 78%;
+    text-align: justify;
+    margin-left: 2rem;
+    padding: 0.6rem;
+  }
+  .feedback_header .left .feedback_btn{
+    height: 2.6rem;
+    margin-top: -8.8rem;
+    color: var(--color-white);
+    font-weight: bold;
+    width: 8rem;
+    background-color: var(--color-secondary);
+    color: #000;
+  }
+  .feedback_header .left .feedback_btn:hover{
+    transition: var(--transistion);
+    background-color: transparent !important;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+  }
+  .feedback_header .left .content_div h1{
+    font-size: 5.2rem;
+    font-weight: bolder;
+    margin-top: -1.4rem;
+  }
+  .feedback_header .left .content_div h2{
+    font-size: 3.4rem;
+  }
+  .feedback_header .left .content_div p{
+    font-weight: bold;
+  }
+  .feedback_header .right{
+    width: 60%;
+    /* border: 2px solid red; */
+    display: grid;
+    place-items: center;
+  }
+  .feedback_header .right .img_div{
+    margin-top: -5.4rem;
+    height: 70%;
+    width: 70%;
+  }
+  #feedback .feedback_slogan{
+    font-size: 3.2rem;
+    font-weight: bolder;
+  }
+  section#background_photo{
+    /* border: 2px solid red; */
+    margin-top: 4rem;
+    height: 22rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #background_photo .photoDiv{
+    height: 100%;
+    background-image: url('https://pixabay.com/get/g0a45a2dcc94d45e28c4c55dc249d97d6ba45dacc5bea503153e92a1dfcec1749e7da540ada8a68d920e8517ced8c4a00.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
+  #background_photo .photoDiv::before{
+    height: 100%;
+    content: "";
+    display: block;
+    position: relative;
+    background-color: #000;
+    opacity: 0.4;
+  }
+  #feedback .feedback_container{
+    margin-top: 5rem;
+    height: 100vh;
+  }
+  #feedback .feedback_container h1{
+    font-size: 3.2rem;
+    font-weight: bold;
+  }

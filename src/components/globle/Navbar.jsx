@@ -18,18 +18,18 @@ export default function Navbar() {
               <Link to="/home" className="nav_links"><i className="uil uil-home" /> Home</Link>
             </li>
             <li>
-              <Link to="/about" className="nav_links" target="_blank"><i className="uil uil-lightbulb-alt" /> About</Link>
+              <Link to="/about" className="nav_links" ><i className="uil uil-lightbulb-alt" /> About</Link>
             </li>
             <li>
-              <Link to="/package" className="nav_links" target="_blank"><i className="uil uil-package" /> Package</Link>
+              <Link to="/package" className="nav_links" ><i className="uil uil-package" /> Package</Link>
             </li>
             <li>
-              <Link to="/contact" className="nav_links" target="_blank"><i className="uil uil-envelope" /> Contact</Link>
+              <Link to="/contact" className="nav_links" ><i className="uil uil-envelope" /> Contact</Link>
             </li>
             <li>
-              <Link to="/feedback" className="nav_links" target="_blank"><i className="uil uil-feedback" /> Feedback</Link>
+              <Link to="/feedback" className="nav_links" ><i className="uil uil-feedback" /> Feedback</Link>
             </li>
-            <Link to="/login" target="_blank"><button className="login btn">Login</button></Link>
+            <Link to="/login" ><button className="login btn">Login</button></Link>
           </ul>
         </div>
       </nav>
