@@ -9,10 +9,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Navbar from './components/globle/Navbar';
 import Footer from './components/globle/Footer';
-// import Package from './pages/Package';
+import Package from './pages/Package';
 import Feedback from './pages/Feedback';
-// import Login from './pages/Login';
-// import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 // import Admin from './pages/Admin';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -28,11 +28,11 @@ function App() {
             <Route exact path="/home" element={<Home/>} />
             <Route exact path="/about" element={<About/>} />
             <Route exact path="/contact" element={<Contact/>} />
-            {/* <Route exact path="/package" element={<Package/>} /> */}
+            <Route exact path="/package" element={<Package/>} />
             <Route exact path="/feedback" element={<Feedback/>} />
             {/* <Route exact path="/admin" element={<Admin/>} /> */}
-            {/* <Route exact path="/login" element={<Login/>} /> */}
-            {/* <Route exact path="/signup" element={<Signup/>} /> */}
+            <Route exact path="/login" element={<Login/>} />
+            <Route exact path="/signup" element={<Signup/>} />
           </Routes>
         <Footer/>
       {/* </BrowserRouter> */}
