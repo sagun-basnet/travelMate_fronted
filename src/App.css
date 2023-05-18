@@ -213,11 +213,12 @@ nav .logo {
     background-image: url('https://www.state.gov/wp-content/uploads/2019/04/Nepal-2123x1406.jpg');
 }
 .mainBody .germany{
-    height: 94%;
-    background-position: center;
-    background-size: cover;
-    background-image: url('https://www.germany.travel/media/redaktion/content/natur_aktiv_content/radfahren/artikel_radfahren/_grb9720.jpg');
+  height: 94%;
+  background-position: center;
+  background-size: cover;
+  background-image: url('https://www.germany.travel/media/redaktion/content/natur_aktiv_content/radfahren/artikel_radfahren/_grb9720.jpg');
 }
+
 .image-overlay{
     width: 100%;
     height: 100%;
@@ -1103,10 +1104,7 @@ section#feedback{
   place-items: center; */
 }
 .feedback_header .right .img_div{
-  /* border: 2px solid red; */
-  /* margin-top: -rem; */
   height: 95%;
-  /* background: url('./img/feedback.svg'); */
   width: 90%;
 }
 .feedback_header .right .img_div img{
@@ -1160,10 +1158,8 @@ section#background_photo{
   top: 40%;
   right: 1rem;
   position: absolute;
-  /* border: 2px solid red; */
 }
 .godownFeedback img{
-  /* border: 2px solid blue; */
   height: 12rem;
 }
 /* =======================End of Feedback section======================= */

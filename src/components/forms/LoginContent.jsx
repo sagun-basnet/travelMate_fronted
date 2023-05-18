@@ -1,7 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '../../context/authContext';
 
 export default function LoginContent() {
+  const [inputs, setInputs] = useState({
+    email:"",
+    password:"",
+  })
+  const [err, setErr] = useState(null);
+
+
+  const handleChange = (e) => {
+    // console.log(e.value);
+    setInputs((prev)=>({...prev,[e.target.name]:e.target.value }))
+  };
+
+  const navigate = useNavigate();
+
+  const {login} = useContext(AuthContext);
+
+  const handleLogin = async (e) =>{
+    e.preventDefault();
+    try{
+      await login(inputs);
+      console.log("ma ya samma aaya...");
+      navigate("/");
+
+    }catch(err){
+      // console.log(err.response);
+      setErr(err.response.data);
+    }
+  }
   return (
     <div className='loginMainDiv'>
       <div className="loginDiv">
@@ -24,9 +54,10 @@ export default function LoginContent() {
         <div className="right">
             <h2>Login</h2>
             <form action="">
-                <input type="email" placeholder='Enter Email'/>
-                <input type="password" placeholder='Enter Password'/>
-                <input type="button" value='Login'/>
+                <input type="email" placeholder='Enter Email' name='email' onChange={handleChange}/>
+                <input type="password" placeholder='Enter Password' name='password' onChange={handleChange}/>
+                <h6 style={{color: "red"}}>{err && err}</h6>
+                <input type="button" value='Login' onClick={handleLogin}/>
             </form>
         </div>
       </div>
