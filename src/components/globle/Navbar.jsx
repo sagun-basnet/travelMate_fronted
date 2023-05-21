@@ -1,34 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Logo from '../../img/logo2.png';
+import { AuthContext } from '../../context/authContext';
+import { useContext } from 'react';
 
 export default function Navbar() {
+
+  const {currentUser} = useContext(AuthContext);
+
   return (
     <div>
       <nav id='navBar'>
         <div className="logo">
           <div className="nav_logo">
-          <Link to="/" className="nav_links"><img src={Logo} alt=" " /></Link>
+          <NavLink to="/" className="nav_links"><img src={Logo} alt=" " /></NavLink>
             
           </div>
         </div>
+          {/* <h2>{currentUser.user_name}</h2> */}
         <div className="links links_container">
           <ul>
             <li>
-              <Link to="/home" className="nav_links"><i className="uil uil-home" /> Home</Link>
+              <NavLink to="/" className="nav_links"><i className="uil uil-home" /> Home</NavLink>
             </li>
             <li>
-              <Link to="/about" className="nav_links" ><i className="uil uil-lightbulb-alt" /> About</Link>
+              <NavLink to="/about" className="nav_links" ><i className="uil uil-lightbulb-alt" /> About</NavLink>
             </li>
             <li>
-              <Link to="/package" className="nav_links" ><i className="uil uil-package" /> Package</Link>
+              <NavLink to="/package" className="nav_links" ><i className="uil uil-package" /> Package</NavLink>
             </li>
             <li>
-              <Link to="/contact" className="nav_links" ><i className="uil uil-envelope" /> Contact</Link>
+              <NavLink to="/contact" className="nav_links" ><i className="uil uil-envelope" /> Contact</NavLink>
             </li>
             <li>
-              <Link to="/feedback" className="nav_links" ><i className="uil uil-feedback" /> Feedback</Link>
+              <NavLink to="/feedback" className="nav_links" ><i className="uil uil-feedback" /> Feedback</NavLink>
             </li>
+            
+            
             <Link to="/login" ><button className="login btn">Login</button></Link>
           </ul>
         </div>

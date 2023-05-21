@@ -24,8 +24,12 @@ export default function LoginContent() {
     e.preventDefault();
     try{
       await login(inputs);
-      console.log("ma ya samma aaya...");
-      navigate("/");
+      if(inputs.email === "superadmin@gmail.com"){
+        navigate("/admin/dashboard ");
+      }
+      else{
+        navigate("/");
+      }
 
     }catch(err){
       // console.log(err.response);

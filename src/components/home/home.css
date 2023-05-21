@@ -1,0 +1,61 @@
+
+.cloud{
+    /* border: 2px solid red; */
+    width: 100%;
+    position: absolute;
+    bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -1rem;
+    overflow: hidden;
+    height: 20rem;
+    /* width: 20rem; */
+}
+.cloud img{
+    /* border: 2px solid red; */
+    height: 100%;
+    max-width: 100%;
+    /* animation: animate calc(6s * var(--i)) linear infinite; */
+    animation-name: animate;
+    animation-duration: 40s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+    /* animation: animate 32s linear infinite; */
+    /* opacity: 0.9; */
+}
+@keyframes animate
+{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.ballon1{
+    position: absolute;
+    top: 14rem;
+    left: 0.5rem;
+    animation-name: floating; 
+    animation-duration: 3s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+}
+
+.ballon2{
+    position: absolute;
+    top: 14rem;
+    right: 0.5rem;
+    animation-name: floating; 
+    animation-duration: 3s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+}
+
+@keyframes floating { 
+    0% { transform: translate(0,  0px); } 
+    50%  { transform: translate(0, 15px); } 
+    100%   { transform: translate(0, -0px); }     
+} 

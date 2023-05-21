@@ -41,6 +41,9 @@
 }
 
 /* =======================for nav bar=======================  */
+.active{
+  color: var(--color-secondary);
+}
 .window-scrolled{
     background: linear-gradient(to right,#0F2027,#132227,#162931);
     border-bottom: 0.2rem solid #000;
@@ -73,7 +76,7 @@ nav li:hover {
 nav {
     /* border: 2px solid black; */
   background-color: var(--color-primary);
-  height: 5rem;
+  height: 4.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -143,7 +146,7 @@ nav .logo {
   content: " ";
   position: absolute;
   width: 3rem;
-  top: 3.4rem;
+  top: 3.2rem;
   height: 3px;
   background-color: #56D1D9;
   display: flex;
@@ -171,7 +174,7 @@ nav .logo {
     margin: auto;
     width: 88%;
     /* border: 2px solid red; */
-    height: calc(90vh - 5rem);
+    height: calc(90vh - 4rem);
     margin-top: 0rem;
     display: flex;
     justify-content: center;
@@ -781,6 +784,23 @@ section#contact{
 .contact_form .image{
   width: 50%;
 }
+
+.mapMainDiv{
+  border-radius: 1rem;
+  height: 28rem;
+  background-color: var(--color-primary);
+  padding: 0.6rem;
+}
+.mapMainDiv .mapDiv{
+  /* border: 2px solid red; */
+  height: 100%;
+  width: 100%;
+}
+.mapMainDiv .mapDiv iframe{
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
 /* =======================end of contact======================= */
 /* =======================Login======================= */
 .loginMainDiv{
@@ -1146,10 +1166,188 @@ section#background_photo{
   margin-top: 2rem;
   height: 100vh;
 }
-#feedback .feedback_container h1{
+#feedback_container{
+  margin-top: 3rem;
+  width: 100%;
+  /* border: 2px solid red; */
+}
+#feedback .feedback_review{
+  margin-top: 2rem;
+  /* border: 2px solid darkgoldenrod; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+#feedback .feedback_comment{
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+#feedback .feedback_review h1,.feedback_comment h1{
+  text-align: center;
   font-size: 3.2rem;
   font-weight: bold;
 }
+#feedback .feedback_review p,.feedback_comment p{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.feedback_comment .totalRevDiv{
+  /* border: 2px solid black; */
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.stars{
+  /* border: 2px solid white; */
+  display: grid;
+  place-items: center;
+}
+.feed,.users{
+  height: 5.2rem;
+  width: 5.2rem;
+  color: #fff;
+}
+.samebg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 14rem;
+  width: 20rem;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  border-radius: 1rem;
+}
+.samebg h4{
+  font-size: 2.2rem;
+  font-weight: bolder;
+  color: #fff;
+}
+.samebg span{
+  font-size: 2.4rem;
+  font-weight: bolder;
+}
+.userCommentDiv{
+  /* border: 2px solid red; */
+  margin-top: 2rem;
+}
+.userCommentDiv .commentDiv{
+  margin-top: 2rem;
+  display: grid;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.userCommentDiv .commentDiv .cmtBox{
+  border: 2px solid black;
+  width: 100%;
+  height: 20rem;
+  padding: 0.4rem;
+  border-radius: 1.6rem;
+}
+.userCommentDiv .commentDiv .cmtBox p{
+  text-align: left;
+  font-weight: 500;
+}
+.userCommentDiv .commentDiv .cmtBox h4{
+  text-align: left;
+  font-weight: bolder;
+}
+.userCommentDiv .commentDiv .cmtBox span{
+  text-align: left;
+  font-weight: bolder;
+}
+.userCommentDiv .commentDiv .cmtBox p{
+  text-align: left;
+  font-weight: 500;
+}
+.formMainDiv{
+  /* border: 2px solid black; */
+  width: 100%;
+  height: 60vh;
+  display: flex;
+}
+.formMainDiv .svgDiv{
+  width: 50%;
+  height: 100%;
+  /* border: 2px solid red; */
+}
+.formMainDiv .svgDiv img{
+  width: 100%;
+  height: 100%;
+}
+.formMainDiv .formDiv{
+  /* border: 2px solid red; */
+  width: 50%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.formMainDiv .formDiv form{
+  background-color: var(--color-primary);
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 26rem;
+  height: 28rem;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.formMainDiv .formDiv form input[type='text']{
+  /* border-radius: 0.6rem; */
+  padding: 0.4rem;
+  border: none;
+  /* text-align: center; */
+  border-bottom: 1px solid #dcdcdc;
+}
+.formMainDiv .formDiv form input[type='text'],.formMainDiv .formDiv form textarea{
+  background-color: transparent;
+  resize: none;
+  color: var(--color-secondary);
+  padding: 0.4rem;
+}
+.formMainDiv .formDiv form ::-webkit-input-placeholder{
+  color: #c0c0c0;
+}
+.formMainDiv .formDiv form input[type='button']{
+  border-radius: 0.6rem;
+  width: 50%;
+  margin: auto;
+  height: 2.4rem;
+  background-color: var(--color-secondary);
+  border: none;
+  font-weight: bolder;
+  /* padding: 0.2rem; */
+}
+.formMainDiv .formDiv form input[type='button']:hover{
+  transition: var(--transistion);
+  background-color: transparent;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+}
+.formMainDiv .formDiv form .rating{
+  /* border: 2px solid; */
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+}
+.formMainDiv .formDiv form h4{
+  color: var(--color-secondary);
+}
+.formMainDiv .formDiv form .ratingStar{
+  color: #fff;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+
+
+
 .godownFeedback{
   display: flex;
   flex-direction: column;

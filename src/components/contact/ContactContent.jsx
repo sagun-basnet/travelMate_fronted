@@ -1,4 +1,5 @@
 import React from 'react'
+import Map from './Map'
 
 export default function ContactContent() {
   return (
@@ -60,6 +61,12 @@ export default function ContactContent() {
               </form>
             </div>
           </div>
+        </div>
+        <div className="map">
+        <h1 className="con_heading">Visit Us</h1>
+        <div className="mapMainDiv container">
+          <Map/>
+        </div>
         </div>
       </section>
     </div>
