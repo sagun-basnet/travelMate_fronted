@@ -7,28 +7,32 @@ export default function LoginContent() {
   const [inputs, setInputs] = useState({
     email:"",
     password:"",
+    // role:""
   })
   const [err, setErr] = useState(null);
 
-
   const handleChange = (e) => {
     // console.log(e.value);
-    setInputs((prev)=>({...prev,[e.target.name]:e.target.value }))
+    setInputs((prev)=>({...prev,[e.target.name]:e.target.value}))
   };
-
+  
   const navigate = useNavigate();
-
+  
   const {login} = useContext(AuthContext);
-
+  
   const handleLogin = async (e) =>{
     e.preventDefault();
     try{
+      console.log(inputs.role);
       await login(inputs);
-      if(inputs.email === "superadmin@gmail.com"){
+      if(inputs.role === "admin"){
         navigate("/admin/dashboard ");
       }
+      else if(inputs.role === "guide"){
+        navigate("/guide");
+      }
       else{
-        navigate("/");
+        navigate("/home");
       }
 
     }catch(err){

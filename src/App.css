@@ -1,9 +1,10 @@
 :root{
     /* --color-primary: #153048; */
     --color-primary: #141718;
-    --color-primary-variant: #0386ad;
-    --color-secondary: #56D1D9;
-    /* --color-primary-variant: #252c53; */
+    /* --color-primary-variant: #0386ad; */
+    --color-primary-variant: #8870E6;
+    /* --color-secondary: var(--color-secondary); */
+    --color-secondary: #8870E6;
     --color-bg-1: #000000;
     --color-bg-2: ;
     --color-bg-3: ;
@@ -23,7 +24,7 @@
     box-sizing: border-box;
 }
 .myBtn{
-  background-color: #56D1D9 !important;
+  background-color: var(--color-secondary) !important;
   color: #000 !important;
   float: right;
   margin-right: 2rem;
@@ -35,14 +36,14 @@
 }
 .myBtn:hover{
   transition: var(--transistion) !important;
-  border: 3px solid #56D1D9 !important;
+  border: 3px solid var(--color-secondary) !important;
   background-color: transparent !important;
-  color: #56D1D9 !important;
+  color: var(--color-secondary) !important;
 }
 
 /* =======================for nav bar=======================  */
 .active{
-  color: var(--color-secondary);
+  color: var(--color-secondary) !important;
 }
 .window-scrolled{
     background: linear-gradient(to right,#0F2027,#132227,#162931);
@@ -69,13 +70,10 @@ nav li {
   display: flex !important;
   place-items: center;
 }
-nav li:hover {
-  transition: var(--transistion);
-  margin-bottom: 1rem;
-}
+
 nav {
     /* border: 2px solid black; */
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
   height: 4.4rem;
   display: flex;
   justify-content: space-between;
@@ -97,8 +95,9 @@ nav .logo{
     place-items: center;
 }
 nav .logo .nav_logo img{
-    width: 12rem;
-    height: 3rem;
+    /* width: 12rem; */
+    width: 100%;
+    /* height: 3rem; */
 }
 nav .nav_logo{
     width: 100%;
@@ -109,6 +108,58 @@ nav .nav_logo{
 nav .logo {
   margin-left: 2rem;
 }
+nav .userInfo{
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  /* margin-right: -5rem; */
+  cursor: pointer;
+}
+nav .userName{
+  /* border: 2px solid var(--color-secondary); */
+  height: 3.4rem;
+  width: 3.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* background-color: var(--color-secondary); */
+  background-color: #000;
+}
+nav h1{
+  margin-top: 0.3rem;
+  font-size: 1.8rem;
+  color: var(--color-secondary);
+  font-weight: bolder;
+}
+nav .down{
+  /* margin-right: -10rem; */
+  color: #000;
+  font-size: 1.4rem;
+  /* border: 2px solid red; */
+}
+nav .userInfo:hover .userName{
+  transition: var(--transistion);
+  background-color: var(--color-secondary);
+}
+nav .userInfo:hover h1{
+  transition: var(--transistion);
+  color: #000;
+}
+nav .userInfo:hover .down{
+  transition: var(--transistion);
+  color: var(--color-secondary);
+}
+nav .dash{
+  font-weight: bolder;
+  font-size: 1.4rem;
+  /* border: 2px solid red; */
+}
+
 .links {
   /* border: 2px solid black; */
   margin-right: 1rem;
@@ -128,18 +179,33 @@ nav .logo {
 }
 .links .nav_links {
   font-size: 1.2rem;
+  /* height: 3rem; */
+  /* display: grid; */
   /* font-weight: 800; */
-  font-weight: bold;
+  font-weight: bolder;
   text-transform: uppercase;
+  color: #000;
 }
-.links li:hover a{
-  /* font-size: 1.4rem; */
+.links li{
+  /* border: 2px solid black; */
+  height: 70%;
+}
+nav li:hover .nav_links{
   transition: var(--transistion);
-  color: #56D1D9 !important;
+  color: var(--color-secondary) !important;
+
+}
+nav li:hover {
+  transition: var(--transistion);
+  margin-bottom: 1rem;
+}
+.links li .nav_links:hover{
+  /* font-size: 1.4rem; */
 }
 .links ul li:hover::after {
   width: 5.6rem;
   /* margin-bottom: 1rem; */
+  background-color: var(--color-secondary);
 }
 .links ul li::after {
   transition: all 0.4s;
@@ -148,12 +214,12 @@ nav .logo {
   width: 3rem;
   top: 3.2rem;
   height: 3px;
-  background-color: #56D1D9;
+  background-color: #000;
   display: flex;
   justify-content: center;
 }
 .login {
-  background-color: #56D1D9;
+  background-color: var(--color-secondary);
   font-size: 1.2rem !important;
   color: #000;
   font-weight: bolder !important;
@@ -163,19 +229,76 @@ nav .logo {
 .login:hover {
   transition: var(--transistion);
   background-color: transparent !important;
-  border: 3px solid #56D1D9;
-  color: #56D1D9;
+  border: 3px solid var(--color-secondary);
+  color: var(--color-secondary);
   /* color: var(--color-primary) !important; */
 }
-
+.logoutDiv hr{
+  border: 2px solid black;
+  width: 100%;
+}
+.logoutDiv div h5{
+  cursor: pointer;
+}
+.logoutDiv .name h5{
+  color: var(--color-secondary);
+  font-size: auto;
+}
+.logoutDiv .setting h5{
+  color: #000;
+}
+.logoutDiv .logout{
+  border-bottom: none;
+}
+.logoutDiv .logout h5{
+  color: red;
+}
+.logoutDiv div h5:hover{
+  transition: var(--transistion);
+  font-size: 1.4rem;
+}
+.logoutDiv div{
+  border-bottom: 1px solid #000;
+  width: 100%;
+  height: calc(100% / 3);
+  display: grid;
+  place-items: center;
+}
+.logoutDiv{
+  background-color: #fff;
+  transition: var(--transistion);
+  border: 2.6px solid black;
+  height: 10rem;
+  width: 12rem;
+  border-radius: 2rem;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 2.2rem;
+}
+.logoutDiv::before{
+  content: '';
+  position: absolute;
+  top: -0.65rem;
+  right: 5rem;
+  width: 18px;
+  height: 18px;
+  transform: rotate(45deg);
+  background-color: #fff;
+  border-left: 2px solid #000;
+  border-top: 2px solid #000;
+}
 /* ======================end of nav bar======================  */
 /* ======================For body======================  */
 .mainBody{
     margin: auto;
     width: 88%;
     /* border: 2px solid red; */
-    height: calc(90vh - 4rem);
-    margin-top: 0rem;
+    /* height: calc(95vh - 4rem); */
+    height: 93vh;
+    margin-top: -1rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -250,7 +373,7 @@ nav .logo {
 
 /* =======================for recently section======================= */
 .recentDiv{
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 section#recently{
   margin-top: 0rem !important;
@@ -338,7 +461,7 @@ footer .footer_containerTop{
   
 }
 .footer_about .logo a{
-  color: #56D1D9;
+  color: var(--color-secondary);
   text-decoration: none;
 }
 .footer_about p{
@@ -398,7 +521,7 @@ footer .footer_containerTop{
   align-items: center;
 }
 .footer_contact h2{
-  color: #56D1D9;
+  color: var(--color-secondary);
   font-size: 1.6rem;
 }
 .footer_contact p{
@@ -453,7 +576,7 @@ footer .footer_containerBot{
 }
 .footer_containerBot .social a:hover i{
   transition: var(--transistion);
-  color: #56D1D9;
+  color: var(--color-secondary);
 }
 .goto{
   position: absolute;
@@ -489,7 +612,7 @@ footer .footer_containerBot{
 
 section#backImg{
   /* border: 2px solid red; */
-  margin-top: 10rem;
+  margin-top: 5rem;
   height: 26rem;
   display: flex;
   justify-content: center;
@@ -1028,10 +1151,10 @@ section#contact{
   color: var(--color-white);
 }
 .cardInfo h2{
-  color: #b1faff;
+  color: #fff;
 }
 .cardInfo .btn{
-  border: 2px solid #56D1D9;
+  border: 3px solid var(--color-secondary);
   background: transparent !important;
   color: #fff;
   font-weight: bolder;
@@ -1039,7 +1162,7 @@ section#contact{
   z-index: 111;
 }
 .cardInfo .btn:hover{
-  background-color: #56D1D9 !important;
+  background-color: var(--color-secondary) !important;
   color: #000;
   font-weight: bolder;
 }

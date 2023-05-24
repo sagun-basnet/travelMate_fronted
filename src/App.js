@@ -19,6 +19,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import {AnimatePresence} from 'framer-motion'
+import UserHome from "./components/home/userHome/UserHome";
 
 const USER_TYPES = {
   PUBLIC: "Public User",
@@ -46,7 +47,7 @@ function App() {
             </PublicElement>
           }
         />
-        {/* <Route exact path="/home" element={<Home />} /> */}
+        <Route exact path="/home" element={<UserHome/>} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/package" element={<Package />} />

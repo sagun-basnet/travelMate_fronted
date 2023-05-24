@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function SliderCard(props) {
   return (
@@ -14,9 +15,9 @@ export default function SliderCard(props) {
         </div>
         <div className="cardInfo">
           <h2>{props.place}</h2>
-          <a href="/">
+          <Link to="/package">
             <button className="btn">view</button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
