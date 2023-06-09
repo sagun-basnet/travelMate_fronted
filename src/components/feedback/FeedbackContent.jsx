@@ -34,7 +34,7 @@ export default function FeedbackContent() {
               <a href="#feedback_container">
                 <button className="btn feedback_btn">Go Down</button>
               </a>
-              <a href="#feedback_review" style={{marginLeft: "1.2rem"}}>
+              <a href="#feedback_review" style={{ marginLeft: "1.2rem" }}>
                 <button className="btn feedback_btn">Review</button>
               </a>
             </div>
@@ -56,7 +56,7 @@ export default function FeedbackContent() {
             <h1>
               User <span>reviews</span>
             </h1>
-            <p style={{fontSize: "1.3rem"}}>
+            <p style={{ fontSize: "1.3rem" }}>
               fell free to review our services. Following are the reviews given
               by other users
             </p>
@@ -88,20 +88,20 @@ export default function FeedbackContent() {
                 User's <span>comments</span> / feedback
               </h1> */}
               <div className="commentDiv">
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
-              <UserComment/>
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
+                <UserComment />
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function FeedbackContent() {
             <h1>
               Provide Us <span>Feedback</span>
             </h1>
-            <FeedbackForm/>
+            <FeedbackForm />
           </div>
         </section>
       </section>

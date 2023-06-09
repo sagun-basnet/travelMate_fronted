@@ -1,6 +1,6 @@
 import React from "react";
 import svg from '../../img/feedbackForm.svg'
-import { AiOutlineStar } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 
 export default function FeedbackForm() {
   return (
@@ -14,11 +14,11 @@ export default function FeedbackForm() {
             <textarea name="feedback" id="" cols="30" rows="8" placeholder="Enter message here.."></textarea>
             <h4>Rating :-</h4>
             <div className="rating">
-                <AiOutlineStar className="ratingStar"/>
-                <AiOutlineStar className="ratingStar"/>
-                <AiOutlineStar className="ratingStar"/>
-                <AiOutlineStar className="ratingStar"/>
-                <AiOutlineStar className="ratingStar"/>
+                <AiFillStar className="ratingStar"/>
+                <AiFillStar className="ratingStar"/>
+                <AiFillStar className="ratingStar"/>
+                <AiFillStar className="ratingStar"/>
+                <AiFillStar className="ratingStar"/>
             </div>
             <input type="button" value="Done" className="DoneBtn"/>
         </form>

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types";
 
 export default function HomeImgDivs(props) {
-  let mar = props.ani;
+  // let mar = props.ani;
   return (
     <div className={props.class}
     >

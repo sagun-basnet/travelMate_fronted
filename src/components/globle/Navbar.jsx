@@ -8,14 +8,27 @@ import { RxDashboard } from "react-icons/rx";
 import { AiOutlineDown } from "react-icons/ai";
 import { AiFillSetting } from "react-icons/ai";
 import { AiOutlineLogout } from "react-icons/ai";
+// import { useNavigate } from 'react-router-dom';
+// import axios from "axios";
 
 export default function Navbar() {
+  //to navigate the page from 1 page to another
+  // const navigate = useNavigate();
 
+  //to know error
+  // const [err, setErr] = useState(null);
+
+  //for knowing current user
+  const { currentUser, logout } = useContext(AuthContext);
+
+
+  //for opening logout option while clicking on profile
   const [openProfile, setOpenProfile] = useState(false);
 
-
-  const { currentUser } = useContext(AuthContext);
-  // console.log(currentUser.role);
+  const handleLogout = () => {
+    logout(); // Call the original logout function
+    setOpenProfile(false); // Set openProfile to false after logout
+  };
 
   return (
     <div>
@@ -26,69 +39,65 @@ export default function Navbar() {
 
           </div>
         </div>
-        {/* <h2>{currentUser.user_name}</h2> */}
+        {/* <h2>{currentUser?.name}</h2> */}
         <div className="links links_container">
           <ul>
-            <NavLink to="/">
+            {/* <NavLink to="/"> */}
               <li>
                 <NavLink to="/" className="nav_links"><i className="uil uil-home" /> Home</NavLink>
               </li>
-            </NavLink>
-            {currentUser.user_name === "superadmin" ?
-              <></>
-              :
               <li>
                 <NavLink to="/about" className="nav_links" ><i className="uil uil-lightbulb-alt" /> About</NavLink>
               </li>
 
-            }
-
             <li>
               <NavLink to="/package" className="nav_links" ><i className="uil uil-package" /> Package</NavLink>
             </li>
-            {currentUser.user_name === "superadmin" ?
+            {
+              currentUser?.role === "admin" ?
               <li>
-                <NavLink to="/dashboard" className="nav_links" ><RxDashboard className='dash' /> Dashboard</NavLink>
+                <NavLink to="/admin/dashboard" className="nav_links" target="_blank"><RxDashboard className='dash' /> Dashboard</NavLink>
               </li>
+              :
+              currentUser?.role === "guider" ?
+              <li>
+                <NavLink to="/guider/dashboard" className="nav_links" target="_blank"><RxDashboard className='dash' /> Dashboard</NavLink>
+              </li>
+
               :
               <li>
                 <NavLink to="/contact" className="nav_links" ><i className="uil uil-envelope" /> Contact</NavLink>
               </li>
             }
-
-            <li>
-              <NavLink to="/feedback" className="nav_links" ><i className="uil uil-feedback" /> Feedback</NavLink>
-            </li>
-            {currentUser.user_name.length === 0 ?
-              <Link to="/login" ><button className="login btn">Login</button></Link>
-              :
-              <div className='userInfo' onClick={() => setOpenProfile((prev) =>!prev)}>
-              {/* <div className='userInfo' onClick={userinfo}> */}
+            {
+              currentUser ? 
+              <div className='userInfo' onClick={() => setOpenProfile((prev) => !prev)}>
                 <div className="userName">
-                  <h1>{currentUser.user_name.charAt(0).toUpperCase()}</h1>
+                  <h1>{currentUser.name.charAt(0).toUpperCase()}</h1>
                 </div>
                 <AiOutlineDown className='down' />
-              </div>
+              </div> :
+              <Link to="/login" ><button className="login btn">Login</button></Link>
+
             }
+            
 
           </ul>
         </div>
       </nav>
       {
         openProfile &&
-          <div className="logoutDiv">
-            <div className="name">
-              <h5>{currentUser.user_name}</h5>
-            </div>
-            {/* <hr /> */}
-            <div className="setting">
-            <h5><AiFillSetting/> setting</h5>
-            </div>
-            {/* <hr /> */}
-            <div className="logout">
-                <h5><AiOutlineLogout className='logoutIcon'/> logout</h5>
-            </div>
-          </div> 
+        <div className="logoutDiv">
+          <div className="name">
+            <h5>{currentUser?.name}</h5>
+          </div>
+          <div className="setting">
+            <h5><AiFillSetting /> setting</h5>
+          </div>
+          <div className="logout">
+            <h5 onClick={handleLogout} ><AiOutlineLogout className='logoutIcon' /> logout</h5>
+          </div>
+        </div>
       }
     </div>
   )

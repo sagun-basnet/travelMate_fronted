@@ -1,45 +1,55 @@
-import React, { useContext, useState } from 'react';
+import React, {  useContext, useState } from 'react';
+import { useFormik } from 'formik';
+// import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
-
+import { signUpSchema } from '../../schemas';
 import { AuthContext } from '../../context/authContext';
 
+// import { AuthContext } from '../../context/authContext';
+
+const initialValues = {
+  email: "",
+  password: "",
+}
+
 export default function LoginContent() {
-  const [inputs, setInputs] = useState({
-    email:"",
-    password:"",
-    // role:""
-  })
+  const [inputs, setInputs] = useState({});
   const [err, setErr] = useState(null);
 
-  const handleChange = (e) => {
-    // console.log(e.value);
-    setInputs((prev)=>({...prev,[e.target.name]:e.target.value}))
-  };
-  
   const navigate = useNavigate();
-  
+
   const {login} = useContext(AuthContext);
+
   
-  const handleLogin = async (e) =>{
+
+  const handleMyChange = (e) =>{
+    setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
+  }
+
+  const handleClick = async e =>{
     e.preventDefault();
     try{
-      console.log(inputs.role);
-      await login(inputs);
-      if(inputs.role === "admin"){
-        navigate("/admin/dashboard ");
-      }
-      else if(inputs.role === "guide"){
-        navigate("/guide");
-      }
-      else{
-        navigate("/home");
-      }
-
+      await login(inputs)
+      navigate("/");  
     }catch(err){
-      // console.log(err.response);
       setErr(err.response.data);
     }
   }
+
+  const {values, errors, touched, handleBlur, handleSubmit, handleChange } = useFormik({
+    initialValues: initialValues,
+    validationSchema: signUpSchema,
+    onSubmit: (values) => {
+      setInputs({
+        email: values.email,
+        password: values.password,
+      });
+      // console.log(values);
+    },
+  });
+
+  
+
   return (
     <div className='loginMainDiv'>
       <div className="loginDiv">
@@ -61,11 +71,23 @@ export default function LoginContent() {
         </div>
         <div className="right">
             <h2>Login</h2>
-            <form action="">
-                <input type="email" placeholder='Enter Email' name='email' onChange={handleChange}/>
-                <input type="password" placeholder='Enter Password' name='password' onChange={handleChange}/>
-                <h6 style={{color: "red"}}>{err && err}</h6>
-                <input type="button" value='Login' onClick={handleLogin}/>
+            <form action="" onSubmit={handleSubmit}>
+                <input type="email" placeholder='Enter Email' name='email' onChange={(e) =>{
+              handleChange(e);
+              handleMyChange(e);
+            }} onBlur={handleBlur} value={values.email}/>
+                <span className='loginErrorMessage'>
+                {errors.email && touched.email ? (errors.email) : null}
+                </span>
+                <input type="password" placeholder='Enter Password' name='password' onChange={(e) =>{
+              handleChange(e);
+              handleMyChange(e);
+            }} onBlur={handleBlur} value={values.password}/>
+                <span className='loginErrorMessage'>
+                {errors.password && touched.password ? (errors.password) : null}
+                </span>
+                <input type="submit" value='Login' onClick={handleClick}/>
+                <span className='incorrectError'>{err && <h6> {err}</h6>}</span>
             </form>
         </div>
       </div>

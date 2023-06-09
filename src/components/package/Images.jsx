@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UserNavbar() {
+export default function Images() {
   return (
     <div>
       

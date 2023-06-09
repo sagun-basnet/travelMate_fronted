@@ -2,6 +2,7 @@ import React from 'react'
 import Map from './Map'
 
 export default function ContactContent() {
+  
   return (
     <div>
        <section id="contact">
@@ -41,22 +42,22 @@ export default function ContactContent() {
               <img src="./svg/contact.svg" alt="" />
             </div>
             <div className="form">
-              <form id="form">
+              <form id="form" action="https://formspree.io/f/xzbqqoga" method="POST">
                 <h2>Send Message</h2>
                 <div className="inputBox">
-                  <input type="text" name required="required" id="name" />
+                  <input type="text" name="name" required="required" id="name" />
                   <span>Full Name</span>
                 </div>
                 <div className="inputBox">
-                  <input type="text" name required="required" id="email" />
+                  <input type="text" name="email" required="required" id="email" />
                   <span id="text">Email</span>
                 </div>
                 <div className="inputBox">
-                  <textarea required="required" id="message" defaultValue={""} />
+                  <textarea required="required" id="message" name='message' />
                   <span>Type your Message......</span>
                 </div>
                 <div className="inputBox buttonBox btn btn-primary">
-                  <input type="submit" name defaultValue="Send" />
+                  <input type="submit" defaultValue="Send" />
                 </div>
               </form>
             </div>

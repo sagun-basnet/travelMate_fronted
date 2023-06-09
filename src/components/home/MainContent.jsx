@@ -11,6 +11,7 @@ import cloud3 from '../../img/Cloud-PNG-10.png';
 import cloud4 from '../../img/Cloud-PNG-12.png';
 import Ballon1 from '../../img/balloon1.avif'
 import Ballon2 from '../../img/balloon2.avif'
+import OtherPageLink from './OtherPageLink';
 
 export default function MainContent() {
   return (
@@ -43,10 +44,12 @@ export default function MainContent() {
       <div className="pool">
         <img src={PoolImg} alt="" />
       </div>
+
+      < OtherPageLink/>
       <BackImg/>
       <div className="">
-        <HomeSliders heading="Popular"/>
-        <HomeSliders heading="Recent"/>
+        <HomeSliders heading="Popular packages"/>
+        <HomeSliders heading="Recent packages"/>
         {/* <MySLIDER/> */}
       </div>
     </div>

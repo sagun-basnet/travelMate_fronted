@@ -1,13 +1,15 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 export default function AboutContent() {
   return (
     <div>
        <section id="about">
-        <h1>Discover a world of <span>Adventure</span></h1>
+        
         <div className="about_main_div">
           <div className="intro_div">
             <div className="intro_para">
+            <h1>Discover a world of<br /><span className='mySpan'> Adventure</span></h1>
+            <p>
               Welcome to travelMate, your ultimate guide to some of the
               most exciting and beautiful destinations around the world. Our aim
               is to provide you with an exceptional travel experience that will
@@ -22,26 +24,18 @@ export default function AboutContent() {
               culture, cuisine, attractions, and more. Whether you're looking for
               a relaxing beach vacation or an <span>adventurous</span> trek through the
               mountains, we have something to offer for everyone. <br />
-              We offer a wide range of services to ensure that your trip is as
-              smooth and enjoyable as possible. From <span>accommodation</span> options and
-              transportation services to guided tours and activities, we provide
-              everything you need to make the most of your trip.
+            </p>
+              <div className="btns">
+                <Link to="/contact"><button className="btnes">Contact</button></Link>
+                <Link to="/package"><button className="btnes">Package</button></Link>
+
+              </div>
               <br />
-              If you have any questions or would like to book your next trip,
-              please don't <span>hesitate</span> to contact us. We're here to help you plan the
-              perfect getaway and create <span>memories</span> that will last a lifetime. Thank
-              you for choosing us as your travel partner.
-              <br />
-              <a href="/contact"><button className="btn">Contact</button></a>
             </div>
             <div className="intro_img">
-              {/* <img src="./img/family.png" alt=""> */}
             </div>
-            {/* <div class="back">
-                
-            </div> */}
           </div>
-          <h1><span>Our</span> Mission</h1>
+          <h1 style={{fontWeight: "bolder"}}>Our <span>Mission</span></h1>
           <div className="mission_div">
             <div className="mis_img">
               {/* <img src="./img/family.png" alt=""> */}
@@ -66,7 +60,7 @@ export default function AboutContent() {
               destination as a world-class travel destination, and to helping
               travelers create unforgettable experiences that they will cherish
               for a lifetime. <br />
-              <a href="/package"><button className="btn">Package</button></a>
+              <a href="/package"><button className="btnes">Package</button></a>
             </div>
           </div>
         </div>

@@ -1,79 +1,107 @@
 import "./App.css";
-import PageError from './img/404.svg';
+// import ScrollToTop from "./components/ScrollToTop";
+import PageError from "./img/404.svg";
 import {
-  Route,
-  Routes,
-  useLocation
+  createBrowserRouter,
+  RouterProvider,
+  // Route,
+  Outlet,
 } from "react-router-dom";
+import SinglePackage from "./components/package/SinglePackage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Navbar from "./components/globle/Navbar";
 import Footer from "./components/globle/Footer";
 import Package from "./pages/Package";
-import Feedback from "./pages/Feedback";
+// import Feedback from "./pages/Feedback";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Guide from "./pages/Guide";
 
-import {AnimatePresence} from 'framer-motion'
-import UserHome from "./components/home/userHome/UserHome";
-
-const USER_TYPES = {
-  PUBLIC: "Public User",
-  NORMAL_USER: "Normal User",
-  GUIDER: "Guid User",
-  ADMIN_USER: "Admin User",
+const Layout = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
 };
 
-const CURRENT_USER_TYPE = USER_TYPES.PUBLIC;
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/package",
+        element: <Package />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "*",
+        element: (
+          <div
+            style={{
+              height: "calc(100vh - 5rem)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img src={PageError} alt="" style={{ height: "100%" }} />
+          </div>
+        ),
+      },
+    ],
+  },
+
+  {
+    path: "/admin/dashboard",
+    element: <Admin />,
+  },
+  {
+    path: "/guide/dashboard",
+    element: <Guide />,
+  },
+  {
+    path: "/package/:id",
+    element: <SinglePackage />,
+  },
+]);
 
 function App() {
-  const location = useLocation();
-  return (
-    <div className="App">
-      {/* <BrowserRouter> */}
-      <Navbar/>
-      <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route
-          exact
-          path="/"
-          element={
-            <PublicElement>
-              <Home />
-            </PublicElement>
-          }
-        />
-        <Route exact path="/home" element={<UserHome/>} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/package" element={<Package />} />
-        <Route exact path="/feedback" element={<Feedback />} />
-        <Route exact path="/admin/dashboard" element={<Admin />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/signup" element={<Signup />} />
-        <Route
-          exact
-          path="*"
-          element={
-            <div style={{height: "calc(100vh - 5rem)", display: "flex", justifyContent:"center", alignItems:"center"}}>
-              <img src={PageError} alt=""  style={{height: "100%"}}/>
-            </div>
-          }
-        />
-      </Routes>
-      </AnimatePresence>
-      <Footer />
-      {/* </BrowserRouter> */}
-    </div>
-  );
-}
 
-function PublicElement({ children }) {
-  return <>{children}</>;
+
+  return (
+        <div className="App">
+          <RouterProvider router={router} />
+        </div>
+
+  );
 }
 
 export default App;
