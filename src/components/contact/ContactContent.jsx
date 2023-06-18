@@ -24,7 +24,7 @@ export default function ContactContent() {
               </div>
               <div className="text">
                 <h3>Phone</h3>
-                <p>98************9</p>
+                <p>9812389459</p>
               </div>
             </div>
             <div className="box">
@@ -49,7 +49,7 @@ export default function ContactContent() {
                   <span>Full Name</span>
                 </div>
                 <div className="inputBox">
-                  <input type="text" name="email" required="required" id="email" />
+                  <input type="text" name="email" required="required" id="email"/>
                   <span id="text">Email</span>
                 </div>
                 <div className="inputBox">

@@ -5,8 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signUpSchema } from '../../schemas';
 import { AuthContext } from '../../context/authContext';
 
-// import { AuthContext } from '../../context/authContext';
-
 const initialValues = {
   email: "",
   password: "",

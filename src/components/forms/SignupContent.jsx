@@ -38,7 +38,6 @@ export default function SignupContent() {
         password: values.password,
         phone: values.phone,
       });
-      // console.log(values);
     },
   });
 

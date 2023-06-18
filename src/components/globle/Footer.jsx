@@ -51,7 +51,7 @@ export default function Footer() {
               <i className="uil uil-phone" />
               <div className="myDiv">
                 <h2>Phone</h2>
-                <p>98*********0</p>
+                <p>9812389459</p>
               </div>
             </div>
             <div className="email fot_con">

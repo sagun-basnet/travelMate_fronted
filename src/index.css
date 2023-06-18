@@ -1,3 +1,19 @@
+html,
+body,
+#root,
+.myApp,
+.myContent{
+  height: 100%;
+  width: 100%;
+}
+.App{
+  height: 100%;
+}
+.myApp{
+  display: flex;
+  flex-direction: row !important;
+  position: relative;
+}
 ::-webkit-scrollbar{
   width: 10px;
 }
@@ -10,8 +26,13 @@
 ::-webkit-scrollbar-track:hover{
   background: #555;
 }
-
-.app{
-  display: flex;
+.fc .fc-daygrid-day-number {
+  color: #fff;
+  text-decoration: none;
+}
+.sidebarContainer {
   position: relative;
+  top: 0;
+  height: 100vh;
+  overflow-y: scroll;
 }

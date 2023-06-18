@@ -1,0 +1,83 @@
+:root{
+    --color-primary: #3DA58A;
+    --color-table-heading: #3E4396;
+    --color-table-data: #1F2A40;
+    --color-table-border: #515151;
+}
+.tableContainer{
+    width: 100%;
+    /* border: 2px solid red; */
+    height: calc(100vh - 12rem);
+    /* padding: 0.5rem; */
+    overflow-y: scroll;
+}
+.tableContainer::-webkit-scrollbar{
+    width: 5px;
+  }
+.tableContainer::-webkit-scrollbar-track{
+    background: transparent !important;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+.tableContainer::-webkit-scrollbar-thumb{
+    background: var(--color-table-heading) !important;
+    border-radius: 2rem !important;
+  }
+.tableContainer::-webkit-scrollbar-track:hover{
+    background: #555;
+  }
+table{
+    width: 100%;
+}
+thead{
+    position: relative;
+    width: 100%;
+}
+thead tr{
+    width: 100% !important;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-table-heading);
+    height: 2rem;
+}
+th{
+    border-left: 2px solid var(--color-table-border);
+    text-align: center;
+    border-right: 2px solid var(--color-table-border);
+}
+tbody {
+    background-color: var(--color-table-data);
+}
+tbody tr{
+    border-bottom: 2px solid var(--color-table-border);
+    border-right: 2px solid var(--color-table-border);
+}
+tbody tr td{
+    text-align: center;
+    
+}
+tbody .actionBtn{
+    width: 5rem;
+    height: 2rem;
+    border: 2px solid #3DA58A;
+    margin: 0.4rem 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3DA58A;
+    border-radius: 0.4rem;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+}
+tbody .actionBtn:hover{
+    border: 2px solid #3DA58A;
+    color: #3DA58A;
+    background-color: transparent;
+    transition: all 200ms ease;
+}
+.actionLink{
+    text-decoration: none;
+
+}

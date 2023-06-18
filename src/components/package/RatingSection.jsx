@@ -3,14 +3,14 @@ import { AiFillStar } from "react-icons/ai";
 import { FcSearch } from "react-icons/fc";
 import './package.css';
 
-export default function RatingSection() {
+export default function RatingSection({totalStar}) {
     return (
         <div className='ratingMainDiv'>
             <div className="ratingTopDiv">
                 <h4>What others think about the Package</h4>
                 <div className="avgStarCount">
                     <div className="starTop">
-                        <AiFillStar className='star' /> <span>4.2</span>
+                        <AiFillStar className='star' /> <span>{totalStar}</span>
                     </div>
                     <div className="starDown">
                         <p>
