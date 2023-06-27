@@ -668,6 +668,7 @@
 .commentDiv .cmt .top .userMess{
     /* border: 2px solid red; */
     padding: 0.5rem;
+    width: 100%;
 }
 .commentDiv .cmt .top .userMess p{
     text-align: justify;
@@ -680,9 +681,10 @@
     justify-content: center;
     align-items: center;
     gap: 1.4rem;
+    padding: 0.6rem;
 }
 .commentDiv .cmt .down span{
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: bolder;
 }
 .commentDiv .cmt .down .ratings{
@@ -691,7 +693,21 @@
     justify-content: center;
     align-items: center;
     font-size: 2.4rem;
-    color: gold;
+    color: rgb(255, 221, 31);
+}
+.commentDiv .cmt .down .ratings .icon-style{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.commentDiv .cmt .down .ratings .icon-style .starIcon{
+    font-size: 1.8rem;
+}
+.commentDiv .cmt .down .ratings .icon-style .starIconO{
+    font-size: 2rem;
+    margin-top: 0.4rem;
 }
 
 

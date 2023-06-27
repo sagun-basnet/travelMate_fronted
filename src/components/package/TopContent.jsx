@@ -15,7 +15,7 @@ export default function TopContent() {
   return (
     <div className='topPackageContainer'>
         <div className="heading">
-            <h1>Nepal's Coolest Travel Community</h1>
+            <h1>Nepal's Inspiring Travel Community</h1>
             <h2>
             <span>
                 {text}

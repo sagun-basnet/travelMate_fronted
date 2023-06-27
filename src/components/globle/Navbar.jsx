@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import Logo from '../../img/logo4.png';
 import { AuthContext } from '../../context/authContext';
 import { useContext } from 'react';
@@ -13,6 +13,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 // import axios from "axios";
 
 export default function Navbar() {
+  const navigation = useNavigate();
   //to navigate the page from 1 page to another
   // const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ export default function Navbar() {
 
   //for knowing current user
   const { currentUser, logout } = useContext(AuthContext);
+  console.log(currentUser);
 
 
   //for opening logout option while clicking on profile
@@ -29,7 +31,8 @@ export default function Navbar() {
   const handleLogout = () => {
     logout(); // Call the original logout function
     setOpenProfile(false); // Set openProfile to false after logout
-    setOpenModal(false)
+    setOpenModal(false);
+    navigation('/');
   };
 
   const [openModal, setOpenModal] = useState(false)

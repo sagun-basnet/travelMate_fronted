@@ -27,13 +27,13 @@ const adjustedDate = new Date(selectedDate.getTime() - offset);
 const sqlFormattedDate = adjustedDate.toISOString().split('T')[0];
 // console.log("formatted date: " + sqlFormattedDate);
 
-  console.log("user id:"+ id);
-  console.log("package id:"+productId);
-  console.log("cost: "+cost);
-  console.log("Date: "+selectedDate);
+  // console.log("user id:"+ id);
+  // console.log("package id:"+productId);
+  // console.log("cost: "+cost);
+  // console.log("Date: "+selectedDate);
   const dateString = selectedDate;
   const dateFormate = new Date(dateString);
-  console.log(dateFormate);
+  // console.log(dateFormate);
   const handlePayment = async () => {
     // Create the data object to send to the server
     const data = {

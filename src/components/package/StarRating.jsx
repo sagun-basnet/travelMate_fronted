@@ -10,7 +10,6 @@ function StarRating({count, rating, color, onRating}) {
         }else if(!hoverRating && rating >= index){
             return color.filled
         }
-
         return color.unfilled
     }
     
@@ -30,7 +29,7 @@ function StarRating({count, rating, color, onRating}) {
             />
         ))
     }, [count, rating, hoverRating])
-    console.log(rating);
+    // console.log(rating);
   return (
     <div>
       {stars}
@@ -42,10 +41,10 @@ StarRating.propTypes = {
     count: PropTypes.number,
     rating: PropTypes.number,
     onChange: PropTypes.func,
-    color: {
+    color: PropTypes.shape({
         filled: PropTypes.string,
         unfilled: PropTypes.string,
-    }
+    }),
 }
 
 StarRating.defaultProps = {
