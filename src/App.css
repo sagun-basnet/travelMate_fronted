@@ -1,4 +1,5 @@
-@import url("https://cdn.syncfusion.com/ej2/material.css");
+/* @import url("https://cdn.syncfusion.com/ej2/material.css"); */
+
 :root{
     /* --color-primary: #153048; */
     --color-primary: #141718 !important;
@@ -24,6 +25,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+*::before, *::after {
+  box-sizing: border-box;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
 .myBtn{
   background-color: var(--color-secondary) !important;
   color: #000 !important;
@@ -47,8 +57,8 @@
     width: 88%;
     /* border: 2px solid red; */
     /* height: calc(95vh - 4rem); */
-    height: 93vh;
-    margin-top: -1rem;
+    height: 92vh;
+    margin-top: -1.8rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -425,12 +435,6 @@ section#about{
   /* border: 2px solid red; */
   width: 90% !important;
 }
-.about_main_div .intro_div{
-  /* border: 2px solid black; */
-  display: flex;
-  gap: 4rem;
-  /* height: 30rem; */
-}
 #about h1{
   margin-top: 3rem;
   font-size: 3.1rem;
@@ -444,7 +448,10 @@ section#about{
   /* border: 2px solid red; */
 }
 .intro_div{
+  display: flex;
+  gap: 4rem;
   height: calc(100vh - 8rem);
+  /* margin-top: -1rem; */
 }
 .intro_div .intro_para p{
   text-align: justify;
@@ -452,12 +459,12 @@ section#about{
   margin-top: -2rem;
   padding-left: 0;
   margin-left: 0.35rem;
-
+  
 }
 .intro_div .intro_para{
-  border-radius: 2rem;
+  /* border: 2px solid red; */
   padding: 0.8rem;
-  width: 45%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -470,7 +477,6 @@ section#about{
 }
 .intro_div .intro_para .btns{
   margin-top: -1.2rem;
-  /* border: 2px solid red; */
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -480,11 +486,12 @@ section#about{
   /* margin-right: 2rem; */
   border: 2px solid black;
   height: 2.4rem;
-  width: 8rem;
+  width: 6rem;
   float: right;
   border-radius: 0.4rem;
   background-color: #8870E6 !important;
   color: #fff;
+  font-size: 0.85rem;
   font-weight: bolder;
 }
 
@@ -610,14 +617,21 @@ section#contact{
   margin-bottom: 3rem;
   display: flex;
   justify-content: space-between;
-  gap: 8rem;
+  gap: 6rem;
   width: 100%;
+  height: 36rem;
 }
 .contact_div .contact_form .image{
-  /* border: 2px solid black; */
+  /* border: 2px solid red; */
   background-image: url('./img/contact.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+  width: 50%;
 }
 .contact_div .contact_form .form{
+  /* border: 2px solid red; */
   width: 50%;
   border-radius: 2rem;
   box-shadow: 10px 10px 3px 3px rgba(0, 0, 0, 0.2);
@@ -924,34 +938,37 @@ section#contact{
   width: 100% !important;
 } */
 
-.black{
-  width: 352px;
-  height: 15.9rem;
-  background-color: rgba(0, 0, 0, 0.48);
-  position: absolute;
-  top: 0;
-  z-index: 11;
-  border-radius: 1rem;
-}
+
 .sliderContent{
-  border: 2px solid #fff;
+  border: 2px solid #fff2ff;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  /* padding: 0.8rem; */
 }
 .cardImg{
   border-radius: 1rem;
   /* display: none; */
   height: 100%;
   width: 100%;
-  /* z-index: 11; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.cardImg .black{
+  /* border: 2px solid red; */
+  /* width: 352px; */
+  width: 100%;
+  /* height: 15.9rem; */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  z-index: 11;
+  border-radius: 1rem;
 }
 .cardImg img{
   border-radius: 1rem;
@@ -972,7 +989,7 @@ section#contact{
   color: #fff;
 }
 .cardInfo .btn{
-  border: 3px solid var(--color-secondary);
+  border: 2.6px solid var(--color-secondary);
   background: transparent !important;
   color: #fff;
   font-weight: bolder;
@@ -1382,4 +1399,87 @@ section#background_photo{
   border: 2px solid var(--color-secondary);
   background-color: transparent;
   color: var(--color-secondary);
+}
+/* ====for admin modle==== */
+.adminmodalBackground{
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  z-index: 1111;
+}
+.adminmodalContainer{
+  border-radius: 1.6rem;
+  /* background-color: #fff; */
+  background-color: #141B2D;
+  height: 50%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 1rem;
+  box-shadow: 1px 1px 8px 2px #000;
+}
+.adminmodalContainer img{
+  /* border: 2px solid red; */
+  width: 60%;
+  position: absolute;
+  top: 1rem;
+}
+.adminmodalCloseBtn{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  /* background-color: rgb(255, 21; */
+  border: none;
+  display: grid;
+  place-items: center;
+}
+.adminmodalCloseBtn:hover{
+  background-color: red;
+  transition: var(--transistion);
+}
+.adminmodalTitle h1{
+  font-weight: bolder;
+  color: var(--color-primary-variant);
+}
+.adminmodalBody{
+  margin-top: 3.2rem;
+}
+.adminmodalBody h3{
+  text-align: center;
+}
+.adminmodalFooter{
+  display: flex;
+  gap: 1rem;
+}
+.adminmodalFooter button{
+  margin-top: 2rem;
+  width: 4.6rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  font-weight: bolder;
+  border: 2px solid #3DA58A;
+  background-color: #3DA58A;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.adminmodalFooter button:hover{
+  transition: var(--transistion);
+  border: 2px solid #3DA58A;
+  background-color: transparent;
+  color: #3DA58A;
 }

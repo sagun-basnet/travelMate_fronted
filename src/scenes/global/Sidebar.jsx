@@ -157,12 +157,11 @@ const Sidebar = () => {
             
             <Item
               title="Manage Booking"
-              to="/admin/dashboard/managePackage"
+              to="/admin/dashboard/manageBooking"
               icon={<BookIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            
 
             <Typography
               variant="h6"

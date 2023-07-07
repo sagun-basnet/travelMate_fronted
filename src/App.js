@@ -32,6 +32,7 @@ import Line from "./scenes/line"
 import Geography from "./scenes/geography";
 import AddPackage from "./scenes/addPackage";
 import ManagePackage from "./scenes/package";
+import ManageBooking from "./scenes/booking";
 import EsewaPayment from "./components/package/EsewaPayment";
 import ThankYouPage from "./components/package/ThankYouPage";
 import AfterBooking from "./components/package/AfterBooking";
@@ -124,6 +125,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/dashboard/addPackage",
         element: <AddPackage/>
+      },
+      {
+        path: "/admin/dashboard/manageBooking",
+        element: <ManageBooking/>
       },
       {
         path: "/admin/dashboard/managePackage",

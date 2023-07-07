@@ -16,6 +16,7 @@ import Line from '../scenes/line';
 import Geography from '../scenes/geography';
 import AddPackage from '../scenes/addPackage';
 import ManagePackage from "../scenes/package";
+import ManageBooking from "../scenes/booking";
 
 
 export default function Admin() {
@@ -37,6 +38,7 @@ export default function Admin() {
                     <Route path="/addGuide" element={<AddGuide />} />
                     <Route path="/addPackage" element={<AddPackage />} />
                     <Route path="/managePackage" element={<ManagePackage />} />
+                    <Route path="/manageBooking" element={<ManageBooking />} />
                     <Route path="/calender" element={<Calendar />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/bar" element={<Bar />} />

@@ -25,12 +25,8 @@ function EsewaPayment() {
   const offset = selectedDate.getTimezoneOffset() * 60000; // Convert minutes to milliseconds
 const adjustedDate = new Date(selectedDate.getTime() - offset);
 const sqlFormattedDate = adjustedDate.toISOString().split('T')[0];
-// console.log("formatted date: " + sqlFormattedDate);
+console.log("formatted date: " + sqlFormattedDate);
 
-  // console.log("user id:"+ id);
-  // console.log("package id:"+productId);
-  // console.log("cost: "+cost);
-  // console.log("Date: "+selectedDate);
   const dateString = selectedDate;
   const dateFormate = new Date(dateString);
   // console.log(dateFormate);
@@ -61,7 +57,7 @@ const sqlFormattedDate = adjustedDate.toISOString().split('T')[0];
         <form>
           <img src={esewaLogo} alt="" />
           <input type="number" placeholder='Enter your phone number' name='esewaNum' />
-          <input type="password" placeholder='Enter your password' name='esewaPassword' />
+          <input type="password" placeholder='Enter your MPIN' name='esewaPassword' />
           <input type="number" name='esewaCost' value={cost} readOnly />
           <div className="paymentLine">
             <span>to</span>

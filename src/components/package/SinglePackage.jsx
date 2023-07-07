@@ -16,7 +16,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export default function SinglePackage() {
   const [bookedData, setBookedData] = useState([]);
-  // console.log(bookedData);
+  console.log(bookedData);
 
   const loadDatabooked = async () => {
     const response = await axios.get("http://localhost:5000/api/bookedDetail/get");
@@ -26,9 +26,6 @@ export default function SinglePackage() {
   useEffect(() => {
     loadDatabooked();
   }, []);
-
-  
-
 
   //for opening Modal
   const [openModal, setOpenModal] = useState(false);
@@ -69,16 +66,11 @@ export default function SinglePackage() {
     if (selectedDate === null) {
       return;
     }
-    if (currentUser === null) {
+    if (currentUser?.name === undefined) {
       navigate('/login');
     } else {
 
       const isBooked = allInfo.some(info => {
-        // console.log('info', info);
-        // console.log('info.user_id:', info.user_id);
-        // console.log('currentUser?.id:', currentUser?.id);
-        // console.log('info.pac_id:', info.pac_id);
-        // console.log('products.id:', products.id);
 
         return info.user_id === currentUser?.id && info.package_id === products.id;
       });
@@ -107,6 +99,10 @@ export default function SinglePackage() {
 
   const isThisUserBook = allInfo.some(info => info.user_id === currentUser?.id);
 
+  allInfo.some(info => {
+    console.log(info.user_id);
+  });
+
   const loadData = async () => {
     const response = await axios.get("http://localhost:5000/api/allDetail/get");
     setAllInfo(response.data);
@@ -119,10 +115,13 @@ export default function SinglePackage() {
 
   //checking if this user have booked this package or not
   const isThisUserBooked = bookedData.some(info => {
-
-    return info.id === currentUser?.id && info.pac_id === products.id;
+    // console.log(info.bookedUser_id);
+    // console.log(info.bookedPac_id);
+    // console.log(products.id);
+    return info.bookedUser_id === currentUser?.id && info.bookedPac_id === products.id;
 
   })
+  // console.log(currentUser?.id);
   return (
     <div style={{ width: "100%", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center" }}>
       <div className="singlePackMainDiv">
@@ -159,6 +158,9 @@ export default function SinglePackage() {
             {
               currentUser && !isPackageBooked ?
                 <span style={{ marginTop: "-0.6rem", color: "red" }}> <span style={{ fontWeight: "bolder", color: 'black' }}>Note:</span> Please select Date to book your package</span>
+                : currentUser?.name === undefined ?
+                <>
+                <span style={{ marginTop: "-0.6rem", color: "red" }}> <span style={{ fontWeight: "bolder", color: 'black' }}>Note:</span> Please Login to book the package</span></>
                 :
                 <></>
             }
@@ -181,7 +183,7 @@ export default function SinglePackage() {
                         required
                       />
                       <SlCalender className='calenderIcon' />
-                      <button className='myBtns' type='submit' onClick={handleButtonClick} disabled={currentUser?.role === 'admin' || currentUser?.role === 'guide'}>
+                      <button className='myBtns' type='submit' onClick={handleButtonClick} disabled={currentUser?.role === 'admin' || currentUser?.role === 'guide' || currentUser?.name === undefined}>
                         <BsFillBookmarkCheckFill /> {getButtonText()}
                       </button>
                     </form>

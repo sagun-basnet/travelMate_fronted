@@ -39,7 +39,7 @@ export default function ContactContent() {
           </div>
           <div className="contact_form">
             <div className="image">
-              <img src="./svg/contact.svg" alt="" />
+              {/* <img src="./svg/contact.svg" alt="" /> */}
             </div>
             <div className="form">
               <form id="form" action="https://formspree.io/f/xzbqqoga" method="POST">

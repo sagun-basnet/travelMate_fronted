@@ -137,8 +137,7 @@
 
 /* ==================package card================== */
 .mainPackagesDiv{
-    margin-top: 4rem;
-    /* border: 2px solid red; */
+    margin-top: 2rem;
     display: grid;
     place-items: center;
     width: 100%;
@@ -148,7 +147,7 @@
     border-radius: 1.4rem;
     padding: 2rem;
     padding-bottom: 6rem;
-    width: 94%;
+    width: 96%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -247,9 +246,9 @@
 
 /* ================single package================ */
 .singlePackMainDiv{
-    margin-top: 3rem;
+    margin-top: 1rem;
     /* border: 2px solid red; */
-    width: 90%;
+    width: 94%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,13 +260,12 @@
 }
 .singlePackMainDiv .imgdesDiv{
     border-radius: 2rem;
-    height: 70vh;
+    height: 78vh;
     width: 100%;
     border: 2px solid black;
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
     margin-top: 2rem;
+    padding: 1rem;
     gap: 1rem;
 }
 .vert-line{
@@ -277,13 +275,11 @@
     margin-top: 2rem;
 }
 .singlePackMainDiv .imgdesDiv .images,.singlePackMainDiv .imgdesDiv .singleDescription{
-    /* border: 2px solid blue; */
     width: 45%;
 }
 .singlePackMainDiv .imgdesDiv .images{
     display: flex;
     align-items: center;
-    padding: 1rem;
     width: 55%;
 }
 .images .optionImg, .images .mainImg{
@@ -320,7 +316,7 @@
 .imgdesDiv .images img{
     width: 100%;
     height: 100%;
-    border: 3px solid #000;
+    border: 2.6px solid #000;
 }
 .singleDescription{
     display: flex;
@@ -420,9 +416,14 @@
     color: #fff;
 }
 .overalRating{
+    /* border: 2px solid red; */
+    height: 38rem;
     width: 90%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
+    padding: 2rem 0rem;
 }
 .ratingMainDiv{
     border-radius: 2rem;
@@ -430,6 +431,7 @@
     width: 50%;
     padding: 2rem;
     margin: 2rem 0;
+    height: 100%;
 }
 .ratingMainDiv .ratingTopDiv{
     display: flex;
@@ -560,6 +562,7 @@
     border: 2px solid black;
     border-radius: 2rem;
     width: 90%;
+    height: 34rem;
 }
 .userReview h1{
     text-align: center;
@@ -573,7 +576,8 @@
     border: 2px solid #000;
     border-radius: 2rem;
     width: 50%;
-    height: 32.6rem;
+    /* height: 34rem; */
+    height: 100%;
     margin: 2rem 0;
     padding: 1rem;
 }
@@ -879,7 +883,7 @@ input::-webkit-inner-spin-button {
 .thankyouMainDiv .thankyouPara p{
     /* border: 2px solid red; */
     margin-top: -1rem;
-    width: 70%;
+    width: 80%;
     font-size: 1.28rem;
     text-align: justify;
     padding: 0.4rem;

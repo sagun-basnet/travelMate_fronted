@@ -8,36 +8,42 @@ export default function MySLIDER() {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
   };
   return (
     <div className="mySlider">
       <Slider {...settings}>
         <div className="sliderCardDiv">
           <SliderCard 
-          place="France"
-          source="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
+          place="Chitwan"
+          source="https://nomadicated.com/wp-content/uploads/2022/11/Things-to-Do-in-Chitwan-1-1024x683.jpg"
           />
         </div>
         <div className="sliderCardDiv">
           <SliderCard 
-          place="Thailand"
-          source="https://d240vg222euz94.cloudfront.net/media/uploads/images/a5981c45-4f4d-44b8-a581-d9b10985fcb7.jpeg"
+          place="Pokhara"
+          source="https://youimg1.tripcdn.com/target/100v1f000001h1di6BCEF.jpg?proc=source%2Ftrip"
           />
         </div>
         <div className="sliderCardDiv">
           <SliderCard 
-          place="Indonesia"
-          source="https://a.cdn-hotels.com/gdcs/production143/d1112/c4fedab1-4041-4db5-9245-97439472cf2c.jpg"
+          place="Mustang"
+          source="https://www.muchbetteradventures.com/magazine/content/images/2018/07/23114614/Mustang-Nepal-.jpg"
           />
         </div>
         <div className="sliderCardDiv">
           <SliderCard 
-          place="Switzerland"
-          source="https://cdn.britannica.com/65/162465-050-9CDA9BC9/Alps-Switzerland.jpg"
+          place="Comming soon"
+          source=" "
           />
         </div>
         <div className="sliderCardDiv">
+          <SliderCard 
+          place="Comming soon"
+          source=" "
+          />
+        </div>
+        {/* <div className="sliderCardDiv">
           <SliderCard 
           place="Italy"
           source="https://cdn.pixabay.com/photo/2016/04/15/13/30/fassa-valley-1331004_960_720.jpg"
@@ -66,7 +72,7 @@ export default function MySLIDER() {
           place="China"
           source="https://www.planetware.com/wpimages/2020/01/china-in-pictures-beautiful-places-to-photograph-the-great-wall.jpg"
           />
-        </div>
+        </div> */}
         
       </Slider>
     </div>

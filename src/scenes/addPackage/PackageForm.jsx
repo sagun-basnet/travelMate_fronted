@@ -32,7 +32,7 @@ export default function Packageform() {
   return (
     <div className='packageFormDiv'>
       <form action="">
-        <h2>Adding Package</h2>
+        {/* <h2>Adding Package</h2> */}
         <div className="packageUpDiv">
             <input type="text" placeholder='Enter Package Title' name='pac_title' onChange={(e) => handleMyChange(e)} value={inputs.pac_title}/>
             <input type="number" placeholder='Enter Package Cost' name='pac_cost' onChange={(e) => handleMyChange(e)} value={inputs.pac_cost}/>

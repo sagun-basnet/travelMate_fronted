@@ -22,7 +22,7 @@ export default function Navbar() {
 
   //for knowing current user
   const { currentUser, logout } = useContext(AuthContext);
-  console.log(currentUser);
+  // console.log(currentUser);
 
 
   //for opening logout option while clicking on profile
@@ -35,7 +35,7 @@ export default function Navbar() {
     navigation('/');
   };
 
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div>
